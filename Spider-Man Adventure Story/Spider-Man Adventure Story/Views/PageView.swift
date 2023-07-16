@@ -9,7 +9,6 @@
  https://github.com/Nordo00/AdventureStory
  */
 import SwiftUI
-
 struct PageView: View {
     @Binding var userChoice: Int
     
@@ -18,19 +17,22 @@ struct PageView: View {
         let currentStoryPath : Path = Story.paths[userChoice]
         NavigationStack {
             ZStack {
-                Image("spiderman-headshot")
-                    .resizable()
-                    .edgesIgnoringSafeArea(.all)
+                
+                BackGroundImage(imageName: currentStoryPath.storyImage)
+                
                 VStack {
                     
                     Text(currentStoryPath.storyText)
-                        .foregroundColor(.cyan)
+                        .foregroundColor(.white)
                         .cornerRadius(10)
                         .font(.body)
-                    Image(currentStoryPath.storyImage)
-                        .resizable()
-                        .scaledToFit()
+                        .multilineTextAlignment(.center)
+                        .background(.ultraThinMaterial.opacity(0.9))
+                        .cornerRadius(10)
+                        .shadow(color: Color.black, radius: 10)
                     
+                    
+                    // MARK: Start Page Buttons
                     if currentStoryPath.endOfStory {
                         NavigationLink(destination: ContentView()){
                             Text("Play Again")
@@ -41,15 +43,14 @@ struct PageView: View {
                         NavigationLink(destination: PageView(userChoice: .constant(currentStoryPath.choice1DestinationIndex))) {
                             Text(currentStoryPath.choice1Text)
                         }
-                        .buttonStyle(ChoiceButtonStyle(backGroundColor: .gray))
-                        
+                        .buttonStyle(ChoiceButtonStyle(backGroundColor: .red))
                         // Path 2
                         NavigationLink(destination: PageView(userChoice: .constant(currentStoryPath.choice2DestinationIndex))) {
                             Text(currentStoryPath.choice2Text)
                                 
                         }.buttonStyle(ChoiceButtonStyle(backGroundColor: .blue))
                     }
-                    
+                    // MARK: End Page Buttons
                 }
             }
         }

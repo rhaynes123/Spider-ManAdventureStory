@@ -17,5 +17,6 @@ struct ChoiceButtonStyle : ButtonStyle {
             .foregroundColor(.white)
             .cornerRadius(10)
             .font(.headline)
+            .shadow(color: Color.black, radius: 10)
     }
 }

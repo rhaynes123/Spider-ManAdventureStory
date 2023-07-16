@@ -11,6 +11,7 @@
 		553B83A42A620DE70031147A /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553B83A32A620DE70031147A /* Story.swift */; };
 		553B83A62A6324F40031147A /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553B83A52A6324F40031147A /* Path.swift */; };
 		553B83A92A632B280031147A /* ChoiceButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553B83A82A632B280031147A /* ChoiceButtonStyle.swift */; };
+		553B83AB2A648F840031147A /* BackGroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553B83AA2A648F840031147A /* BackGroundImage.swift */; };
 		55AC5B8D2A620375002FF6D8 /* Spider_Man_Adventure_StoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC5B8C2A620375002FF6D8 /* Spider_Man_Adventure_StoryApp.swift */; };
 		55AC5B8F2A620375002FF6D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC5B8E2A620375002FF6D8 /* ContentView.swift */; };
 		55AC5B912A620376002FF6D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55AC5B902A620376002FF6D8 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		553B83A32A620DE70031147A /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		553B83A52A6324F40031147A /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		553B83A82A632B280031147A /* ChoiceButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceButtonStyle.swift; sourceTree = "<group>"; };
+		553B83AA2A648F840031147A /* BackGroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackGroundImage.swift; sourceTree = "<group>"; };
 		55AC5B892A620375002FF6D8 /* Spider-Man Adventure Story.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spider-Man Adventure Story.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55AC5B8C2A620375002FF6D8 /* Spider_Man_Adventure_StoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spider_Man_Adventure_StoryApp.swift; sourceTree = "<group>"; };
 		55AC5B8E2A620375002FF6D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,7 +45,7 @@
 		553B839F2A6209180031147A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				553B83A72A632B110031147A /* ButtonStyles */,
+				553B83A72A632B110031147A /* Customs */,
 				55AC5B8E2A620375002FF6D8 /* ContentView.swift */,
 				553B83A02A6209390031147A /* PageView.swift */,
 			);
@@ -59,12 +61,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		553B83A72A632B110031147A /* ButtonStyles */ = {
+		553B83A72A632B110031147A /* Customs */ = {
 			isa = PBXGroup;
 			children = (
 				553B83A82A632B280031147A /* ChoiceButtonStyle.swift */,
+				553B83AA2A648F840031147A /* BackGroundImage.swift */,
 			);
-			path = ButtonStyles;
+			path = Customs;
 			sourceTree = "<group>";
 		};
 		55AC5B802A620375002FF6D8 = {
@@ -176,6 +179,7 @@
 				55AC5B8F2A620375002FF6D8 /* ContentView.swift in Sources */,
 				553B83A12A6209390031147A /* PageView.swift in Sources */,
 				553B83A92A632B280031147A /* ChoiceButtonStyle.swift in Sources */,
+				553B83AB2A648F840031147A /* BackGroundImage.swift in Sources */,
 				55AC5B8D2A620375002FF6D8 /* Spider_Man_Adventure_StoryApp.swift in Sources */,
 				553B83A62A6324F40031147A /* Path.swift in Sources */,
 				553B83A42A620DE70031147A /* Story.swift in Sources */,

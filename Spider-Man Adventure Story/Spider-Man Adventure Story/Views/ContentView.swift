@@ -13,6 +13,7 @@ struct ContentView: View {
             ZStack {
                 Image("spiderman-headshot")
                     .resizable()
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                     .edgesIgnoringSafeArea(.all)
                 VStack {
                     Text("The Vulture II")
@@ -24,7 +25,9 @@ struct ContentView: View {
                         .foregroundColor(.white)
                     NavigationLink(destination: PageView(userChoice: .constant(0))) {
                         Text("Start Story").foregroundColor(.white)
-                    }.buttonStyle(ChoiceButtonStyle(backGroundColor: .blue))
+                    }
+                    .buttonStyle(ChoiceButtonStyle(backGroundColor: .blue))
+                    .shadow(color: Color.black.opacity(0.3), radius: 10)
                 }
             }
         }

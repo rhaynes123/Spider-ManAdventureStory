@@ -24,7 +24,7 @@ struct ContentView: View {
                         .foregroundColor(.white)
                     NavigationLink(destination: PageView(userChoice: .constant(0))) {
                         Text("Start Story").foregroundColor(.white)
-                    }
+                    }.buttonStyle(ChoiceButtonStyle(backGroundColor: .blue))
                 }
             }
         }

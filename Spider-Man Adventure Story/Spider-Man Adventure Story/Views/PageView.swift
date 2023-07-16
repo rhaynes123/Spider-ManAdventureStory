@@ -15,7 +15,7 @@ struct PageView: View {
     
     var body: some View {
         
-        let currentStoryPage : Story = stories[userChoice]
+        let currentStoryPath : Path = Story.paths[userChoice]
         NavigationStack {
             ZStack {
                 Image("spiderman-headshot")
@@ -23,29 +23,29 @@ struct PageView: View {
                     .edgesIgnoringSafeArea(.all)
                 VStack {
                     
-                    Text(currentStoryPage.storyText)
+                    Text(currentStoryPath.storyText)
                         .foregroundColor(.cyan)
                         .cornerRadius(10)
                         .font(.body)
-                    Image(currentStoryPage.storyImage)
+                    Image(currentStoryPath.storyImage)
                         .resizable()
                         .scaledToFit()
                     
-                    if currentStoryPage.endOfStory {
+                    if currentStoryPath.endOfStory {
                         NavigationLink(destination: ContentView()){
-                            Text("Start Over")
+                            Text("Play Again")
                         }.buttonStyle(ChoiceButtonStyle(backGroundColor: .blue))
                     }
                     else {
-                        // Story 1
-                        NavigationLink(destination: PageView(userChoice: .constant(currentStoryPage.choice1Destination))) {
-                            Text(currentStoryPage.choice1)
+                        // Path 1
+                        NavigationLink(destination: PageView(userChoice: .constant(currentStoryPath.choice1DestinationIndex))) {
+                            Text(currentStoryPath.choice1Text)
                         }
                         .buttonStyle(ChoiceButtonStyle(backGroundColor: .gray))
                         
-                        // Story 2
-                        NavigationLink(destination: PageView(userChoice: .constant(currentStoryPage.choice2Destination))) {
-                            Text(currentStoryPage.choice2)
+                        // Path 2
+                        NavigationLink(destination: PageView(userChoice: .constant(currentStoryPath.choice2DestinationIndex))) {
+                            Text(currentStoryPath.choice2Text)
                                 
                         }.buttonStyle(ChoiceButtonStyle(backGroundColor: .blue))
                     }
@@ -56,18 +56,7 @@ struct PageView: View {
     }
 }
 
-struct ChoiceButtonStyle : ButtonStyle {
-    var backGroundColor : Color
-    
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .padding()
-            .background(backGroundColor)
-            .foregroundColor(.white)
-            .cornerRadius(10)
-            .font(.headline)
-    }
-}
+
 
 struct PageView_Previews: PreviewProvider {
     static var previews: some View {

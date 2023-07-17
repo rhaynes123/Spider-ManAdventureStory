@@ -12,6 +12,8 @@
 		553B83A62A6324F40031147A /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553B83A52A6324F40031147A /* Path.swift */; };
 		553B83A92A632B280031147A /* ChoiceButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553B83A82A632B280031147A /* ChoiceButtonStyle.swift */; };
 		553B83AB2A648F840031147A /* BackGroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553B83AA2A648F840031147A /* BackGroundImage.swift */; };
+		553B83AE2A65AE310031147A /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 553B83AD2A65AE310031147A /* Collections */; };
+		553B83B02A65AE310031147A /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 553B83AF2A65AE310031147A /* OrderedCollections */; };
 		55AC5B8D2A620375002FF6D8 /* Spider_Man_Adventure_StoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC5B8C2A620375002FF6D8 /* Spider_Man_Adventure_StoryApp.swift */; };
 		55AC5B8F2A620375002FF6D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC5B8E2A620375002FF6D8 /* ContentView.swift */; };
 		55AC5B912A620376002FF6D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55AC5B902A620376002FF6D8 /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				553B83B02A65AE310031147A /* OrderedCollections in Frameworks */,
+				553B83AE2A65AE310031147A /* Collections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +126,10 @@
 			dependencies = (
 			);
 			name = "Spider-Man Adventure Story";
+			packageProductDependencies = (
+				553B83AD2A65AE310031147A /* Collections */,
+				553B83AF2A65AE310031147A /* OrderedCollections */,
+			);
 			productName = "Spider-Man Adventure Story";
 			productReference = 55AC5B892A620375002FF6D8 /* Spider-Man Adventure Story.app */;
 			productType = "com.apple.product-type.application";
@@ -150,6 +158,9 @@
 				Base,
 			);
 			mainGroup = 55AC5B802A620375002FF6D8;
+			packageReferences = (
+				553B83AC2A65AE310031147A /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
 			productRefGroup = 55AC5B8A2A620375002FF6D8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -383,6 +394,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		553B83AC2A65AE310031147A /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		553B83AD2A65AE310031147A /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 553B83AC2A65AE310031147A /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		553B83AF2A65AE310031147A /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 553B83AC2A65AE310031147A /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 55AC5B812A620375002FF6D8 /* Project object */;
 }

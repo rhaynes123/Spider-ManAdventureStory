@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import OrderedCollections
 struct Story {
-    static let paths: Array = [
+    static let paths: OrderedSet = [
         // 0
         Path(storyText: #"Spider-Man had just gotten a nice hot cup of coffee from his favorite deli. As he takes a sip his phone goes off. The Spider-Tracer app has made an alert because it's detecting traffic on the police scanner. He listens and hears there is an armored car robbery. The location of the robbery says it's moving down main. "How can a robbery be moving?". He chugged the coffee and swung down main street and  his Spider-sense goes off and sees what looks like someone in the Vulture suit carrying an armored car."#, choice1Text: "Make a giant web infront of Vulture stopping him and the armored car", choice1DestinationIndex: 1, choice2Text: "Make two web lines stopping only the Vultures wings from moving forward", choice2DestinationIndex: 2, storyImage: "vulture", endOfStory: false),
         

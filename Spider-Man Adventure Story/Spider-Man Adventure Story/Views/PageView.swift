@@ -31,31 +31,36 @@ struct PageView: View {
                         .cornerRadius(10)
                         .shadow(color: Color.black, radius: 10)
                     
-                    
-                    // MARK: Start Page Buttons
-                    if currentStoryPath.endOfStory {
-                        NavigationLink(destination: ContentView()){
-                            Text("Play Again")
-                        }.buttonStyle(ChoiceButtonStyle(backGroundColor: .blue))
-                    }
-                    else {
-                        // Path 1
-                        NavigationLink(destination: PageView(userChoice: .constant(currentStoryPath.choice1DestinationIndex))) {
-                            Text(currentStoryPath.choice1Text)
-                        }
-                        .buttonStyle(ChoiceButtonStyle(backGroundColor: .red))
-                        // Path 2
-                        NavigationLink(destination: PageView(userChoice: .constant(currentStoryPath.choice2DestinationIndex))) {
-                            Text(currentStoryPath.choice2Text)
-                                
-                        }.buttonStyle(ChoiceButtonStyle(backGroundColor: .blue))
-                    }
-                    // MARK: End Page Buttons
+                    buildStoryNavigation(currentStoryPath: currentStoryPath)
                 }
             }
         }
     }
+    
+    private func buildStoryNavigation(currentStoryPath: Path) -> some View {
+        return VStack {
+            if currentStoryPath.endOfStory {
+                NavigationLink(destination: ContentView()){
+                    Text("Play Again")
+                }.buttonStyle(ChoiceButtonStyle(backGroundColor: .blue))
+            }
+            else {
+                // Path 1
+                buildNavigationLink(choiceIndex: currentStoryPath.choice1DestinationIndex, choiceText: currentStoryPath.choice1Text, color: .red)
+                
+                // Path 2
+                buildNavigationLink(choiceIndex: currentStoryPath.choice2DestinationIndex, choiceText: currentStoryPath.choice2Text, color: .blue)
+            }
+        }
+    }
+    
+    private func buildNavigationLink(choiceIndex : Int, choiceText : String, color : Color ) -> some View {
+        NavigationLink(destination: PageView(userChoice: .constant(choiceIndex))) {
+            Text(choiceText)
+        }.buttonStyle(ChoiceButtonStyle(backGroundColor: color))
+    }
 }
+
 
 
 
